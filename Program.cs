@@ -20,8 +20,13 @@ namespace ProjetoXadrezConsole
                     Console.Clear();
                     Tela.ImprimirTabuleiro(Partida.tab);
                     Console.WriteLine();
+                    Console.WriteLine("Turno: " + Partida.Turno);
+                    Console.WriteLine("Aguardando Jogada: " + Partida.JogadorAtual);
+
+                    Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                    Partida.ValidarPosicaoOrigem(origem);
 
                     bool[,] PosicaoPossiveis = Partida.tab.peca(origem).MovimentosPossiveis();
                     Console.Clear();
@@ -30,18 +35,17 @@ namespace ProjetoXadrezConsole
                     Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
+                    Partida.ValidarPosicaoDestino(origem,destino);
 
-                    Partida.ExecutaMovimento(origem, destino);
-                }
-               
-                
-               
+                    Partida.RealizaJogada(origem, destino);
+                }               
             }
             catch (TabuleiroExeptions ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.ReadLine();
             }
-            Console.ReadLine();
+           
         }
     }
 }
