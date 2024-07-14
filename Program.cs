@@ -35,7 +35,10 @@ namespace ProjetoXadrezConsole
                     Partida.ValidarPosicaoDestino(origem,destino);
 
                     Partida.RealizaJogada(origem, destino);
-                }               
+                }
+                Console.Clear();
+
+                Tela.ImprimirPartida(Partida);
             }
             catch (TabuleiroExeptions ex)
             {
