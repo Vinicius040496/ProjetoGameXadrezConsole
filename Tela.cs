@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using ProjetoXadrezConsole.Xadrez;
+=======
+using ProjetoXadrezConsole.Xadrez;
+>>>>>>> 56cbc6854d179e8666afbff59b6ce1ab7532c84c
 using System;
 using System.Collections.Generic;
 using System.Linq;
