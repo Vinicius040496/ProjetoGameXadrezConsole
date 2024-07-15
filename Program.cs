@@ -19,26 +19,26 @@ namespace ProjetoXadrezConsole
                 {
                     Console.Clear();
                    
-                    Tela.ImprimirPartida(Partida);
+                    Tela.imprimirPartida(Partida);
                     Console.WriteLine();
                     Console.Write("Origem: ");
-                    Posicao origem = Tela.LerPosicaoXadrez().ToPosicao();
+                    Posicao origem = Tela.lerPosicaoXadrez().ToPosicao();
                     Partida.ValidarPosicaoOrigem(origem);
 
                     bool[,] PosicaoPossiveis = Partida.tab.peca(origem).MovimentosPossiveis();
                     Console.Clear();
-                    Tela.ImprimirTabuleiro(Partida.tab,PosicaoPossiveis);
+                    Tela.imprimirTabuleiro(Partida.tab,PosicaoPossiveis);
 
                     Console.WriteLine();
                     Console.Write("Destino: ");
-                    Posicao destino = Tela.LerPosicaoXadrez().ToPosicao();
+                    Posicao destino = Tela.lerPosicaoXadrez().ToPosicao();
                     Partida.ValidarPosicaoDestino(origem,destino);
 
                     Partida.RealizaJogada(origem, destino);
                 }
                 Console.Clear();
 
-                Tela.ImprimirPartida(Partida);
+                Tela.imprimirPartida(Partida);
             }
             catch (TabuleiroExeptions ex)
             {
